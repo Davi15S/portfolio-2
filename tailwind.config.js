@@ -10,5 +10,7 @@ module.exports = {
       "ubuntu": ["Ubuntu"]
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

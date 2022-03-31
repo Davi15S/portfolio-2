@@ -51,8 +51,8 @@ function Domov() {
                     <div className="sm:flex hidden pointer-events-none">
                         <Lottie
                             options={defaultOptions}
-                            height={400}
-                            width={400}
+                            height={600}
+                            width={600}
                         />
                     </div>
                 </div>
