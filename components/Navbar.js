@@ -31,10 +31,10 @@ function Navbar() {
                     <ChevronDownIcon className='h-5' />
                     <p className='text-xl'>Portfolio</p>
                 </div>
-                <Card img={js} text="Domov.js" id={0} style={active[0] && "bg-[#37373d]"} handleClick={handleClick}/>
-                <Card img={css} text="O mně.css" id={1} style={active[1] && "bg-[#37373d]"} handleClick={handleClick} textColor="text-[#ffbb4b]"/>
-                <Card img={react} text="Projekty.jsx" id={2} style={active[2] && "bg-[#37373d]"} handleClick={handleClick} textColor="text-green-300"/>
-                <Card img={html} text="Kontakt.html" id={3} style={active[3] && "bg-[#37373d]"} handleClick={handleClick} textColor="text-[#ffbb4b]"/>
+                <Card img={js} text="Domov.js" id={0} style={active[0] && "bg-[#37373d] font-semibold"} handleClick={handleClick}/>
+                <Card img={css} text="O mně.css" id={1} style={active[1] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]"/>
+                <Card img={react} text="Projekty.jsx" id={2} style={active[2] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-green-300"/>
+                <Card img={html} text="Kontakt.html" id={3} style={active[3] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]"/>
             </div>
         </div>
     )
@@ -44,7 +44,7 @@ function Card({img, text, id, handleClick, style, textColor}) {
     return (
         <div onClick={handleClick} id={id} className={`text-white flex items-center space-x-2 py-1 pl-7 cursor-pointer hover:bg-[#37373d] transition-all duration-150 ease-in ${style} ${textColor}`}>
             <Image id={id} src={img} width={20} height={20} />
-            <p id={id} className='text-lg font-semibold'>{text}</p>
+            <p id={id} className='text-lg'>{text}</p>
         </div>
     )
 }

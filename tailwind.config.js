@@ -7,7 +7,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       "source-code-pro": ['Source Code Pro'],
-      "nunito-sans": ["Nunito Sans"]
+      "ubuntu": ["Ubuntu"]
     }
   },
   plugins: [],
