@@ -8,7 +8,7 @@ function O_mne() {
                 <h2 className='text-white font-ubuntu font-semibold text-5xl ml-10'>O mně</h2>
                 <div className='codeStyle'>{"<h2>"}</div>
                 <div className='codeStyle'>{"<p>"}</div>
-                <div className='lg:ml-10 ml-5 text-white max-w-3xl'>Dovolte abych se Vám představil. Jmenuji se Nguyen Viet Thanh, kamarádi a známí mi ale říkají David. Momentálně jsem studentem třetího ročníku na Smíchovské střední průmyslové škole a gymnázium. Webama se zabývám už 4 roky a moje motivace se učit dál nové věci je nehynoucí.</div>
+                <div className='lg:ml-10 ml-5 text-white max-w-3xl'>Dovolte mi abych se Vám představil. Jmenuji se Nguyen Viet Thanh, kamarádi a známí mi ale říkají David. Momentálně jsem studentem třetího ročníku na Smíchovské střední průmyslové škole a gymnázium. Webama se zabývám už 4 roky a moje motivace se učit dál nové věci je nehynoucí.</div>
                 <div className='codeStyle'>{"</p>"}</div>
             </div>
             <div className='text-[200px] lg:text-[350px] -z-10 absolute lg:-top-32 -right-[50px] whitespace-nowrap font-semibold text-[#212122]'>About</div>

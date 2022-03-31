@@ -3,34 +3,91 @@
 @tailwind utilities;
 
 .codeStyle {
-    @apply font-source-code-pro text-gray-500 p-2 select-none
+  @apply font-source-code-pro text-gray-500 p-2 select-none;
 }
 
 .navbar-icon::before {
-    content: "";
-    width: 2px;
-    left: 0;
-    height: 100%;
-    top: 0;
-    background: white;
-    position: absolute;
+  content: "";
+  width: 2px;
+  left: 0;
+  height: 100%;
+  top: 0;
+  background: white;
+  position: absolute;
 }
 
 .wave {
-    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;        /* Change to speed up or slow down */
-    animation-iteration-count: infinite;  /* Never stop waving :) */
-    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
-    display: inline-block;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes wave-animation {
-      0% { transform: rotate( 0.0deg) }
-     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-     20% { transform: rotate(-8.0deg) }
-     30% { transform: rotate(14.0deg) }
-     40% { transform: rotate(-4.0deg) }
-     50% { transform: rotate(10.0deg) }
-     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-    100% { transform: rotate( 0.0deg) }
+  10% {
+    transform: rotate(14deg);
   }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hamburger-menu-btn::after,
+.hamburger-menu-btn::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(112, 112, 112);
+  border-radius: 25px;
+  height: 4px;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger-menu-btn::after {
+  transform: translateY(-7px);
+  width: 36px;
+}
+
+.hamburger-menu-btn::before {
+  transform: translateY(7px);
+  width: 26px;
+}
+
+.open .hamburger-menu-btn::after {
+  transform: rotate(45deg);
+}
+
+.open .hamburger-menu-btn::before {
+  transform: rotate(-45deg);
+  width: 36px;
+}
