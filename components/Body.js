@@ -5,7 +5,7 @@ import Projekty from './Projekty';
 
 function Body() {
     return (
-        <div className='bg-[#1e1e1e] lg:ml-[296px] overflow-hidden scrollbar-hide pr-5 ml-2'>
+        <div className='bg-[#1e1e1e] lg:ml-[296px] overflow-hidden scrollbar-hide pr-5'>
             <Domov />
             <O_mne />
             <Projekty />

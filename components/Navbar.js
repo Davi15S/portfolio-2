@@ -41,7 +41,7 @@ function Navbar() {
     }, []);
 
     return (
-        <div className='fixed z-50'>
+        <div className='fixed lg:flex z-50 hidden'>
             <div className='lg:flex'>
                 <div className='h-screen w-14 bg-[#333333] text-[#7c7e7e] flex-col space-y-4'>
                     <div className='cursor-pointer text-white py-2 navbar-icon relative'>
