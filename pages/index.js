@@ -9,13 +9,11 @@ export default function Home() {
     <div>
       <NavbarMobile />
 
-      <section className='flex'>
           {/* Navbar */}
           <Navbar />
 
           {/* Body */}
           <Body />
-      </section>
     </div>
   )
 }

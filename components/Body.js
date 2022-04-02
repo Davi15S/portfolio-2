@@ -1,12 +1,14 @@
 import React from 'react'
 import Domov from './Domov';
 import O_mne from './O_mne';
+import Projekty from './Projekty';
 
 function Body() {
     return (
-        <div className='bg-[#1e1e1e] w-full h-screen overflow-y-scroll overflow-x-hidden z-0 scrollbar-hide'>
+        <div className='bg-[#1e1e1e] lg:ml-[296px] overflow-hidden scrollbar-hide pr-5 ml-2'>
             <Domov />
             <O_mne />
+            <Projekty />
         </div>
     )
 }

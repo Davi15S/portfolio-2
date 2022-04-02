@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BookmarkIcon, ChevronDownIcon, ShareIcon } from "@heroicons/react/outline"
 import js from "../media/js.svg"
 import css from "../media/css.svg"
@@ -17,9 +17,32 @@ function Navbar() {
         setActive(preActive)
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if(window.scrollY < 500) {
+                setActive([true, false, false, false])
+            }
+            if(window.scrollY >= 500){
+                setActive([false, true, false, false])
+            }
+        };
+
+        // just trigger this so that the initial state 
+        // is updated as soon as the component is mounted
+        // related: https://stackoverflow.com/a/63408216
+        handleScroll();
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
-        <div>
-            <div className='lg:flex hidden z-50'>
+        <div className='fixed -z-10'>
+            <div className='lg:flex'>
                 <div className='h-screen w-14 bg-[#333333] text-[#7c7e7e] flex-col space-y-4'>
                     <div className='cursor-pointer text-white py-2 navbar-icon relative'>
                         <BookmarkIcon className='h-8 w-full' />

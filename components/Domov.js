@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Lottie from 'react-lottie';
 import computer_animaion from "../lotties/computer-animation.json";
 import Head from 'next/head'
@@ -13,6 +13,7 @@ function Domov() {
             preserveAspectRatio: "xMidYMid slice"
         }
     };
+
     return (
         <div>
             <Head>
@@ -26,14 +27,13 @@ function Domov() {
             <div className='h-screen p-1 md:p-4'>
                 <div className="codeStyle">{"<html>"}</div>
                 <div className='grid lg:grid-cols-2 h-[90%] items-center grid-cols-1'>
-                    {/* Domov */}
                     <div>
                         <div className='ml-2 lg:ml-10'>
                             <div className='space-y-1'>
                                 <div className="codeStyle">{"<h1>"}</div>
                                 <div className='text-[#f3f3f3] font-ubuntu font-semibold space-y-2 lg:space-y-5 ml-10'>
                                     <h1 className='font-semibold text-4xl md:text-6xl'>
-                                        Ahoj, <span class="wave">👋</span>
+                                        Ahoj, <span className="wave">👋</span>
                                     </h1>
                                     <h2 className='text-4xl md:text-6xl'>
                                         jmenuji se David
