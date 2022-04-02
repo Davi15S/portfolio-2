@@ -43,7 +43,7 @@ function Card({ img, text }) {
                             initial={{ scale: 0 }}
                             animate={{ scale: "100%" }}
                             exit={{ scale: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
                             className='absolute text-white bg-[#4c4c4c] p-4 rounded-full font-semibold w-14 h-14 flex items-center justify-center'>TAP</motion.div>
                     )}
                 </AnimatePresence>
