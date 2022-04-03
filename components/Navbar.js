@@ -22,9 +22,17 @@ function Navbar() {
             if(window.scrollY < 500) {
                 setActive([true, false, false, false])
             }
-            if(window.scrollY >= 500){
+            if(window.scrollY >= 500 && window.scrollY < 1300){
                 setActive([false, true, false, false])
             }
+            if(window.scrollY >= 1300 && window.scrollY < 2500){
+                setActive([false, false, true, false])
+            }
+            if(window.scrollY >= 2500){
+                setActive([false, false, false, true])
+            }
+
+            console.log(window.scrollY);
         };
 
         // just trigger this so that the initial state 

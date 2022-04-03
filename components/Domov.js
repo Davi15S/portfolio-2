@@ -25,7 +25,6 @@ function Domov() {
                 </style>
             </Head>
             <div className='h-screen p-1 md:p-4'>
-                <div className="codeStyle">{"<html>"}</div>
                 <div className='grid lg:grid-cols-2 h-[90%] items-center grid-cols-1'>
                     <div>
                         <div className='ml-2 lg:ml-10'>

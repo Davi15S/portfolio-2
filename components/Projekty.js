@@ -4,11 +4,12 @@ import amazon from "../media/amazon-clone.png"
 import { AnimatePresence, motion } from "framer-motion"
 import netflix from "../media/netflix-clone.png"
 import qarea from "../media/qarea-clone.png"
+import airbnb from "../media/airbnb-clone.png"
 
 function Projekty() {
     return (
-        <div className='ml-2 lg:ml-10 md:p-4 mt-40'>
-            <div>
+        <div className='ml-2 lg:ml-10 md:p-4 mt-40 relative'>
+            <div className='z-20 relative'>
                 <div className='codeStyle'>{"<h3>"}</div>
                 <h3 className='text-white font-ubuntu font-semibold text-5xl ml-10'>Projekty <span className='codeStyle text-sm font-light'>{"</h3>"}</span></h3>
                 <div className='codeStyle'>{"<p>"}</div>
@@ -16,22 +17,26 @@ function Projekty() {
                 <div className='codeStyle'>{"</p>"}</div>
                 <div className='codeStyle'>{"<section>"}</div>
                 <div className='lg:ml-10 ml-5 grid grid-cols-1 m-4 gap-10 md:grid-cols-2 2xl:grid-cols-3 justify-items-center'>
-                    <Card img={amazon} text={"Amazon Clone"} />
-                    <Card img={netflix} text={"Netflix Clone"} />
-                    <Card img={qarea} text={"Qarea Clone"} />
+                    <Card img={amazon} text={"Amazon Clone"} link="https://amazon-copy.vercel.app/" />
+                    <Card img={netflix} text={"Netflix Clone"} link="https://netflix-copy-f4436.web.app/" />
+                    <Card img={qarea} text={"Qarea Clone"} link="https://qarea-clone.vercel.app/" />
+                    <Card img={airbnb} text={"Qarea Clone - In Progress"} link="https://airbnb-clone-henna.vercel.app/" />
                 </div>
                 <div className='codeStyle'>{"</section>"}</div>
             </div>
+            <div className='text-[200px] lg:text-[350px] z-10 absolute top-0 lg:-top-20 -right-[200px] whitespace-nowrap font-semibold text-[#212122] select-none'>Projects</div>
         </div>
     )
 }
 
-function Card({ img, text }) {
+function Card({ img, text, link }) {
     const [toggleHover, setToggleHover] = useState(false)
 
     return (
         <div className='max-w-[400px] space-y-4'>
-            <motion.div
+            <motion.a
+                href={link}
+                target="_blank"
                 onHoverStart={() => setToggleHover(!toggleHover)}
                 onHoverEnd={() => setToggleHover(!toggleHover)}
                 className='max-w-[400px] max-h-[230px] overflow-hidden rounded-lg cursor-pointer relative group flex justify-center items-center'>
@@ -47,7 +52,7 @@ function Card({ img, text }) {
                             className='absolute text-white bg-[#4c4c4c] p-4 rounded-full font-semibold w-14 h-14 flex items-center justify-center'>TAP</motion.div>
                     )}
                 </AnimatePresence>
-            </motion.div>
+            </motion.a>
             <div className='text-white font-semibold font-ubuntu text-3xl'>{text}</div>
         </div>
     )
