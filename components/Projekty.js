@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from "next/image"
 import amazon from "../media/amazon-clone.png"
 import { AnimatePresence, motion } from "framer-motion"
 import netflix from "../media/netflix-clone.png"
 import qarea from "../media/qarea-clone.png"
 import airbnb from "../media/airbnb-clone.png"
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Projekty({id}) {
+    useEffect(() => {
+        Aos.init({ duration: 1500 });
+    })
     return (
-        <div id={id} className='ml-2 lg:ml-10 md:p-4 mt-40 relative'>
+        <div data-aos="fade-in" id={id} className='ml-2 lg:ml-10 md:p-4 mt-40 relative'>
             <div className='z-20 relative'>
                 <div className='codeStyle'>{"<h3>"}</div>
-                <h3 className='text-white font-ubuntu font-semibold text-5xl ml-10'>Projekty <span className='codeStyle text-sm font-light'>{"</h3>"}</span></h3>
+                <h3 className='text-white font-ubuntu font-semibold text-4xl lg:text-5xl lg:ml-10 ml-5'>Projekty <span className='codeStyle text-sm font-light'>{"</h3>"}</span></h3>
                 <div className='codeStyle'>{"<p>"}</div>
                 <div className='lg:ml-10 ml-5 text-white max-w-3xl'>V projektech toho ještě moc nemám, ale doufám, že se moje kolekce ještě zaplní.</div>
                 <div className='codeStyle'>{"</p>"}</div>
@@ -53,7 +58,7 @@ function Card({ img, text, link }) {
                     )}
                 </AnimatePresence>
             </motion.a>
-            <div className='text-white font-semibold font-ubuntu text-3xl'>{text}</div>
+            <div className='text-white font-semibold font-ubuntu text-2xl'>{text}</div>
         </div>
     )
 }

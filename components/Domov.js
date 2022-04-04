@@ -3,8 +3,14 @@ import Lottie from 'react-lottie';
 import computer_animaion from "../lotties/computer-animation.json";
 import Head from 'next/head'
 import { ArrowDownIcon } from '@heroicons/react/outline';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Domov() {
+    useEffect(() => {
+        Aos.init({ duration: 300 });
+    })
+
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -24,7 +30,7 @@ function Domov() {
                     @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
                 </style>
             </Head>
-            <div className='h-screen p-1 md:p-4'>
+            <div data-aos="fade-in" data-aos-duration="3000" data-aos-easing="ease-in" className='h-screen p-1 md:p-4'>
                 <div className='grid lg:grid-cols-2 h-[90%] items-center grid-cols-1'>
                     <div>
                         <div className='ml-2 lg:ml-10'>

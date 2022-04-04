@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import emailjs from "emailjs-com"
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Form({ id }) {
+    useEffect(() => {
+        Aos.init({ duration: 1500 });
+    })
+
     const [sentEmail, setSentEmail] = useState(false)
     const sendEmail = (e) => {
 
@@ -19,10 +25,10 @@ function Form({ id }) {
         setSentEmail(true);
     }
     return (
-        <div id={id} className='ml-2 lg:ml-10 md:p-4 my-40 grid grid-cols-1 xl:grid-cols-2 gap-x-10'>
+        <div data-aos="fade-in" id={id} className='ml-2 lg:ml-10 md:p-4 mt-40 mb-10 grid grid-cols-1 xl:grid-cols-2 gap-x-10'>
             <div>
                 <div className='codeStyle'>{"<h4>"}</div>
-                <div className='text-white font-ubuntu font-semibold text-5xl ml-10'>Kontaktujte mě</div>
+                <div className='text-white font-ubuntu font-semibold text-4xl lg:text-5xl lg:ml-10 ml-5'>Kontaktujte mě</div>
                 <div className='codeStyle'>{"</h4>"}</div>
                 <div className='codeStyle'>{"<p>"}</div>
                 <p className='lg:ml-10 ml-5 text-white max-w-3xl'>Jakékoliv připomínky mi prosím napište pomocí tohoto formuláře. Jsem otevřený všem nápadům a Váš komentář s radostí přivítám.</p>
@@ -36,7 +42,7 @@ function Form({ id }) {
                     <div className='flex'>
                         <textarea name='message' placeholder='Zpráva' type="text" required className='flex-grow bg-[#333333] h-40 outline-none p-3 resize-none scrollbar-hide' />
                     </div>
-                    <div className='flex items-center justify-between'>
+                    <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-5'>
                         <button disabled={sentEmail} className='bg-[#333333] py-3 px-16 font-semibold border-2 border-[#333333] transition-all duration-300 cursor-pointer hover:bg-opacity-0 hover:border-white text-white'>Submit</button>
                         {sentEmail && (
                             <div className='text-white'>Zpráva byla úspěšně odeslána!</div>

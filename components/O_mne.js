@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function O_mne({id}) {
+    useEffect(() => {
+        Aos.init({ duration: 1500 });
+    })
+
     return (
-        <div id={id} className='md:p-4 ml-2 lg:ml-10 mt-20 grid relative'>
+        <div data-aos="fade-in" id={id} className='md:p-4 ml-2 lg:ml-10 mt-20 grid relative'>
             <div className='z-20'>
                 <div className='codeStyle'>{"<h2>"}</div>
-                <h2 className='text-white font-ubuntu font-semibold text-5xl ml-10'>O mně</h2>
+                <h2 className='text-white font-ubuntu font-semibold text-4xl lg:text-5xl lg:ml-10 ml-5'>O mně</h2>
                 <div className='codeStyle'>{"<h2>"}</div>
                 <div className='codeStyle'>{"<p>"}</div>
                 <div className='lg:ml-10 ml-5 text-white max-w-3xl'>Dovolte mi abych se Vám představil. Jmenuji se Nguyen Viet Thanh, kamarádi a známí mi ale říkají David. Momentálně jsem studentem třetího ročníku na Smíchovské střední průmyslové škole a gymnázium. Webami se zabývám už 4 roky a moje motivace se učit dál nové věci je nehynoucí.</div>
