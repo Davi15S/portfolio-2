@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import emailjs from "emailjs-com"
 
-function Form({id}) {
+function Form({ id }) {
+    const [sentEmail, setSentEmail] = useState(false)
     const sendEmail = (e) => {
-        e.preventDefault();
 
-        emailjs.sendForm('service_6wc3i04', 'template_wr5pvd4', e.target, 'wdPmASd-pJ466PxTc')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+        if (sendEmail == false) {
+            e.preventDefault();
+
+            emailjs.sendForm('service_6wc3i04', 'template_wr5pvd4', e.target, 'wdPmASd-pJ466PxTc')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                });
+        }
+
+        setSentEmail(true);
     }
     return (
         <div id={id} className='ml-2 lg:ml-10 md:p-4 my-40 grid grid-cols-1 xl:grid-cols-2 gap-x-10'>
@@ -30,7 +36,12 @@ function Form({id}) {
                     <div className='flex'>
                         <textarea name='message' placeholder='Zpráva' type="text" required className='flex-grow bg-[#333333] h-40 outline-none p-3 resize-none scrollbar-hide' />
                     </div>
-                    <button className='bg-[#333333] py-3 px-16 font-semibold border-2 border-[#333333] transition-all duration-300 cursor-pointer hover:bg-opacity-0 hover:border-white text-white'>Submit</button>
+                    <div className='flex'>
+                        <button className='bg-[#333333] py-3 px-16 font-semibold border-2 border-[#333333] transition-all duration-300 cursor-pointer hover:bg-opacity-0 hover:border-white text-white'>Submit</button>
+                        {!sendEmail && (
+                            <div>Zpráva byla úspěšně odeslána!</div>
+                        )}
+                    </div>
                 </form>
                 <div className='codeStyle'>{"</form>"}</div>
             </div>
