@@ -5,7 +5,7 @@ function Form({ id }) {
     const [sentEmail, setSentEmail] = useState(false)
     const sendEmail = (e) => {
 
-        if (sendEmail == false) {
+        if (!sentEmail) {
             e.preventDefault();
 
             emailjs.sendForm('service_6wc3i04', 'template_wr5pvd4', e.target, 'wdPmASd-pJ466PxTc')
@@ -36,10 +36,10 @@ function Form({ id }) {
                     <div className='flex'>
                         <textarea name='message' placeholder='Zpráva' type="text" required className='flex-grow bg-[#333333] h-40 outline-none p-3 resize-none scrollbar-hide' />
                     </div>
-                    <div className='flex'>
-                        <button className='bg-[#333333] py-3 px-16 font-semibold border-2 border-[#333333] transition-all duration-300 cursor-pointer hover:bg-opacity-0 hover:border-white text-white'>Submit</button>
-                        {!sendEmail && (
-                            <div>Zpráva byla úspěšně odeslána!</div>
+                    <div className='flex items-center justify-between'>
+                        <button disabled={sentEmail} className='bg-[#333333] py-3 px-16 font-semibold border-2 border-[#333333] transition-all duration-300 cursor-pointer hover:bg-opacity-0 hover:border-white text-white'>Submit</button>
+                        {sentEmail && (
+                            <div className='text-white'>Zpráva byla úspěšně odeslána!</div>
                         )}
                     </div>
                 </form>
