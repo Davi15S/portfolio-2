@@ -8,10 +8,10 @@ function Body() {
     return (
         <div className='bg-[#1e1e1e] lg:ml-[296px] overflow-hidden scrollbar-hide pr-5'>
             <div className="codeStyle pl-1">{"<html>"}</div>
-            <Domov />
-            <O_mne />
-            <Projekty />
-            <Form />
+            <Domov/>
+            <O_mne id={"omne"}/>
+            <Projekty id={"projekty"}/>
+            <Form id={"kontakt"}/>
             <div className="codeStyle pl-1">{"</html>"}</div>
         </div>
     )

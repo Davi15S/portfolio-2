@@ -6,9 +6,9 @@ import netflix from "../media/netflix-clone.png"
 import qarea from "../media/qarea-clone.png"
 import airbnb from "../media/airbnb-clone.png"
 
-function Projekty() {
+function Projekty({id}) {
     return (
-        <div className='ml-2 lg:ml-10 md:p-4 mt-40 relative'>
+        <div id={id} className='ml-2 lg:ml-10 md:p-4 mt-40 relative'>
             <div className='z-20 relative'>
                 <div className='codeStyle'>{"<h3>"}</div>
                 <h3 className='text-white font-ubuntu font-semibold text-5xl ml-10'>Projekty <span className='codeStyle text-sm font-light'>{"</h3>"}</span></h3>

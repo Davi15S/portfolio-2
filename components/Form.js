@@ -1,7 +1,7 @@
 import React from 'react'
 import emailjs from "emailjs-com"
 
-function Form() {
+function Form({id}) {
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -13,7 +13,7 @@ function Form() {
             });
     }
     return (
-        <div className='ml-2 lg:ml-10 md:p-4 my-40 grid grid-cols-1 xl:grid-cols-2 gap-x-10'>
+        <div id={id} className='ml-2 lg:ml-10 md:p-4 my-40 grid grid-cols-1 xl:grid-cols-2 gap-x-10'>
             <div>
                 <div className='codeStyle'>{"<h4>"}</div>
                 <div className='text-white font-ubuntu font-semibold text-5xl ml-10'>Kontaktujte mě</div>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-function O_mne() {
+function O_mne({id}) {
     return (
-        <div className='md:p-4 ml-2 lg:ml-10 mt-20 grid relative'>
+        <div id={id} className='md:p-4 ml-2 lg:ml-10 mt-20 grid relative'>
             <div className='z-20'>
                 <div className='codeStyle'>{"<h2>"}</div>
                 <h2 className='text-white font-ubuntu font-semibold text-5xl ml-10'>O mně</h2>

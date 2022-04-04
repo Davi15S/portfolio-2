@@ -15,7 +15,7 @@ function Domov() {
     };
 
     return (
-        <div>
+        <div id='domov'>
             <Head>
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,200&display=swap');

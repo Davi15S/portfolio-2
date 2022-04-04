@@ -5,12 +5,12 @@ import css from "../media/css.svg"
 import react from "../media/react.svg"
 import html from "../media/html.svg"
 import Image from 'next/image'
+import { Link, animateScroll as scroll } from "react-scroll"
 
 function Navbar() {
     const [active, setActive] = useState([true, false, false, false])
 
     const handleClick = e => {
-        console.log(e.target.id);
         const id = e.target.id
         const preActive = [false, false, false, false]
         preActive[id] = true;
@@ -19,33 +19,26 @@ function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY < 500) {
+            if (window.scrollY < 500) {
                 setActive([true, false, false, false])
             }
-            if(window.scrollY >= 500 && window.scrollY < 1300){
+            if (window.scrollY >= 500 && window.scrollY < 1300) {
                 setActive([false, true, false, false])
             }
-            if(window.scrollY >= 1300 && window.scrollY < 2500){
+            if (window.scrollY >= 1300 && window.scrollY < 2500) {
                 setActive([false, false, true, false])
             }
-            if(window.scrollY >= 2500){
+            if (window.scrollY >= 2500) {
                 setActive([false, false, false, true])
             }
-
-            console.log(window.scrollY);
         };
 
-        // just trigger this so that the initial state 
-        // is updated as soon as the component is mounted
-        // related: https://stackoverflow.com/a/63408216
         handleScroll();
 
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -63,22 +56,24 @@ function Navbar() {
                         <ChevronDownIcon className='h-5' />
                         <p className='text-xl'>Portfolio</p>
                     </div>
-                    <Card img={js} text="Domov.js" id={0} style={active[0] && "bg-[#37373d] font-semibold"} handleClick={handleClick} />
-                    <Card img={css} text="O mně.css" id={1} style={active[1] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" />
-                    <Card img={react} text="Projekty.jsx" id={2} style={active[2] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-green-300" />
-                    <Card img={html} text="Kontakt.html" id={3} style={active[3] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" />
+                    <Card img={js} text="Domov.js" id={0} style={active[0] && "bg-[#37373d] font-semibold"} handleClick={handleClick} name="domov"/>
+                    <Card img={css} text="O mně.css" id={1} style={active[1] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" name="omne"/>
+                    <Card img={react} text="Projekty.jsx" id={2} style={active[2] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-green-300" name="projekty"/>
+                    <Card img={html} text="Kontakt.html" id={3} style={active[3] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" name="kontakt"/>
                 </div>
             </div>
         </div>
     )
 }
 
-function Card({ img, text, id, handleClick, style, textColor }) {
+function Card({ img, text, id, handleClick, style, textColor, name }) {
     return (
-        <div onClick={handleClick} id={id} className={`text-white flex items-center space-x-2 py-1 pl-7 cursor-pointer hover:bg-[#37373d] transition-all duration-150 ease-in ${style} ${textColor}`}>
-            <Image id={id} src={img} width={20} height={20} />
-            <p id={id} className='text-lg'>{text}</p>
-        </div>
+        <Link to={name} smooth={true}>
+            <div onClick={handleClick} id={id} className={`text-white flex items-center space-x-2 py-1 pl-7 cursor-pointer hover:bg-[#37373d] transition-all duration-150 ease-in ${style} ${textColor}`}>
+                <Image id={id} src={img} width={20} height={20} />
+                <p id={id} className='text-lg'>{text}</p>
+            </div>
+        </Link>
     )
 }
 
