@@ -6,9 +6,12 @@ import react from "../media/react.svg"
 import html from "../media/html.svg"
 import Image from 'next/image'
 import { Link, animateScroll as scroll } from "react-scroll"
+import { useRecoilState } from 'recoil'
+import { setNavActive } from "../atoms/setNavActive"
 
 function Navbar() {
     const [active, setActive] = useState([true, false, false, false])
+    const [navbarActive, setnavbarActive] = useRecoilState(setNavActive)
 
     const handleClick = e => {
         const id = e.target.id
@@ -42,13 +45,15 @@ function Navbar() {
     }, []);
 
     return (
-        <div className='fixed lg:flex z-50 hidden'>
+        <div className={`fixed ${!navbarActive && "lg:flex"} z-30 hidden `}>
             <div className='lg:flex'>
                 <div className='h-screen w-14 bg-[#333333] text-[#7c7e7e] flex-col space-y-4'>
                     <div className='cursor-pointer text-white py-2 navbar-icon relative'>
                         <BookmarkIcon className='h-8 w-full' />
                     </div>
-                    <ShareIcon className='h-8 mx-auto cursor-pointer hover:text-white' />
+                    <a href="https://github.com/Davi15S" target="_blank">
+                        <ShareIcon className='h-8 mx-auto cursor-pointer hover:text-white' />
+                    </a>
                 </div>
 
                 <div className="h-screen w-60 bg-[#252526]">
@@ -56,19 +61,19 @@ function Navbar() {
                         <ChevronDownIcon className='h-5' />
                         <p className='text-xl'>Portfolio</p>
                     </div>
-                    <Card img={js} text="Domov.js" id={0} style={active[0] && "bg-[#37373d] font-semibold"} handleClick={handleClick} name="domov"/>
-                    <Card img={css} text="O mně.css" id={1} style={active[1] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" name="omne"/>
-                    <Card img={react} text="Projekty.jsx" id={2} style={active[2] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-green-300" name="projekty"/>
-                    <Card img={html} text="Kontakt.html" id={3} style={active[3] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" name="kontakt"/>
+                    <Card img={js} text="Domov.js" id={0} style={active[0] && "bg-[#37373d] font-semibold"} handleClick={handleClick} name="domov" offset={-100}/>
+                    <Card img={css} text="O mně.css" id={1} style={active[1] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" name="omne" />
+                    <Card img={react} text="Projekty.jsx" id={2} style={active[2] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-green-300" name="projekty" />
+                    <Card img={html} text="Kontakt.html" id={3} style={active[3] && "bg-[#37373d] font-semibold"} handleClick={handleClick} textColor="text-[#ffbb4b]" name="kontakt" />
                 </div>
             </div>
         </div>
     )
 }
 
-function Card({ img, text, id, handleClick, style, textColor, name }) {
+function Card({ img, text, id, handleClick, style, textColor, name, offset }) {
     return (
-        <Link to={name} smooth={true}>
+        <Link to={name} smooth={true} offset={offset}>
             <div onClick={handleClick} id={id} className={`text-white flex items-center space-x-2 py-1 pl-7 cursor-pointer hover:bg-[#37373d] transition-all duration-150 ease-in ${style} ${textColor}`}>
                 <Image id={id} src={img} width={20} height={20} />
                 <p id={id} className='text-lg'>{text}</p>
