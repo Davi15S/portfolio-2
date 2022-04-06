@@ -25,7 +25,7 @@ function Projekty({id}) {
                     <Card img={amazon} text={"Amazon Clone"} link="https://amazon-copy.vercel.app/" />
                     <Card img={netflix} text={"Netflix Clone"} link="https://netflix-copy-f4436.web.app/" />
                     <Card img={qarea} text={"Qarea Clone"} link="https://qarea-clone.vercel.app/" />
-                    <Card img={airbnb} text={"Qarea Clone - In Progress"} link="https://airbnb-clone-henna.vercel.app/" />
+                    <Card img={airbnb} text={"airbnb Clone - In Progress"} link="https://airbnb-clone-henna.vercel.app/" />
                 </div>
                 <div className='codeStyle'>{"</section>"}</div>
             </div>
