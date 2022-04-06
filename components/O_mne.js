@@ -14,7 +14,7 @@ function O_mne({id}) {
                 <h2 className='text-white font-ubuntu font-semibold text-4xl lg:text-5xl lg:ml-10 ml-5'>O mně</h2>
                 <div className='codeStyle'>{"<h2>"}</div>
                 <div className='codeStyle'>{"<p>"}</div>
-                <div className='lg:ml-10 ml-5 text-white max-w-3xl'>Dovolte mi abych se Vám představil. Jmenuji se Nguyen Viet Thanh, kamarádi a známí mi ale říkají David. Momentálně jsem studentem třetího ročníku na Smíchovské střední průmyslové škole a gymnázium. Webami se zabývám už 4 roky a moje motivace se učit dál nové věci je nehynoucí.</div>
+                <div className='lg:ml-10 ml-5 text-white max-w-3xl'>Dovolte mi abych se Vám představil. Jmenuji se Nguyen Viet Thanh, kamarádi a známí mi ale říkají David. Momentálně jsem studentem třetího ročníku na Smíchovské střední průmyslové škole a gymnázium. Weby se zabývám už 4 roky a moje motivace se učit dál nové věci je nehynoucí.</div>
                 <div className='codeStyle'>{"</p>"}</div>
                 <div className='codeStyle'>{"<section>"}</div>
                 <div>
